@@ -1,0 +1,42 @@
+# Section Title: Section 1, Selenium Introduction
+---
+## Course: Selenium WebDriver with Java, Basics to Advanced + Frameworks
+## Date: 5/23/2025
+---
+
+## Lesson 1: Selenium Features, what you need to know
+
+## Overview
+Covers some of the basics of what Selenium is, what it does, and why it is relevant today.
+
+## Key Concepts
+- Open source, that makes it free to everyone
+- Exclusively for web based applications, if it can render on the web, you can test it
+- Supports multiple browsers ie. Chrome, Firefox, Internet Explorer, Safari, and Opera, but Opera isnt used commonly
+- Supports multiple operating systems including windows, mac, and linux
+- Can be coded in multiple languages, Java, C#, Python, JS, php, and Ruby
+- Java is what is most commonly used for Selenium
+- Selenium refers to the set of tools that currently consists of WebDriver and IDE, we will be focusing on WebDriver
+- WebDriver helps create test, and IDE is used for bug recreation and recording interactions to play them back
+- WebDriver used to be called Remote Control, but that version was deprecated about 15 years ago
+
+---
+
+## Lesson 2: Selenium WebDriver Architecture Simplified
+
+## Overview
+Discusses some of the back end operations Selenium WebDriver uses when you write a script.
+
+## Key Concepts
+- Selenium client libraries for each language (ie. the Java Library) can be translated into HTTP requests that follow
+the W3C WebDriver protocol.
+- W3C is a protocol that most browsers understand, so this is ideal since chrome, safari, etc can all use it without
+needing to worry about translating to something else. This ensures consistent behavior.
+- Each browser has its own dedicated driver. The driver is a small program that acts as a translator between the
+WebDriver protocol and the browser itself.
+- Browser takes the W3C request and converts it into the native language that the browser can understand, 
+this helps control the actual web browser by carrying out actions the script defines (ie, clicking a button).
+
+## Important Commands / Code Snippets
+
+N/A
