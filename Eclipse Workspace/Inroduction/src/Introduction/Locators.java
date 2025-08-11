@@ -22,6 +22,7 @@ public class Locators {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/locatorspractice");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(By.id("inputUsername")).sendKeys("Rylee Groves");
 		driver.findElement(By.name("inputPassword")).sendKeys("secretPass123!");
 		
@@ -49,6 +50,12 @@ public class Locators {
 		
 		driver.findElement(By.linkText("Forgot your password?")).click();
 		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			System.out.println("Interrupted Exception");
+		}
+		
 		//Xpath -> //tagname[@attribute='value']
 		driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Rylee Groves");
 		
@@ -66,18 +73,10 @@ public class Locators {
 		driver.findElement(By.xpath("//form/input[3]")).sendKeys("123-456-7890");
 		//The 3 finds the xpath number, in this case, he phone number field has xpath = 3
 		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			System.out.println("Interrupted Exception");
-		}
-		
 		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
 		System.out.println(driver.findElement(By.cssSelector("form p")).getText());
 		driver.findElement(By.className("go-to-login-btn")).click();
 		
-		driver.findElement(By.cssSelector("#inputUsername")).sendKeys("Rylee Groves");
-		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
 		
 		try {
 			Thread.sleep(1000);
@@ -85,9 +84,25 @@ public class Locators {
 			System.out.println("Interrupted Exception");
 		}
 		
+		driver.findElement(By.cssSelector("#inputUsername")).sendKeys("Rylee Groves");
+		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
 		driver.findElement(By.className("signInBtn")).click();
 		
-		//driver.quit();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			System.out.println("Interrupted Exception");
+		}
+		
+		driver.findElement(By.xpath("//*[text()='Log Out']")).click();
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			System.out.println("Interrupted Exception");
+		}
+		
+		driver.quit();
 	}
 
 }
