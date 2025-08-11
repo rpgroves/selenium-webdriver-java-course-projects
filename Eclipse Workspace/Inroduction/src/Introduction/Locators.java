@@ -65,8 +65,28 @@ public class Locators {
 		//the children of an element raher than searching through all elements
 		driver.findElement(By.xpath("//form/input[3]")).sendKeys("123-456-7890");
 		//The 3 finds the xpath number, in this case, he phone number field has xpath = 3
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			System.out.println("Interrupted Exception");
+		}
+		
 		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
 		System.out.println(driver.findElement(By.cssSelector("form p")).getText());
+		driver.findElement(By.className("go-to-login-btn")).click();
+		
+		driver.findElement(By.cssSelector("#inputUsername")).sendKeys("Rylee Groves");
+		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			System.out.println("Interrupted Exception");
+		}
+		
+		driver.findElement(By.className("signInBtn")).click();
+		
 		//driver.quit();
 	}
 
